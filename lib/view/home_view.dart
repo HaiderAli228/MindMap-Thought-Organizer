@@ -346,8 +346,8 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Lottie.asset("assets/lottie/noTask.json",
-                        height: 200, width: 200),
+                    // Lottie.asset("assets/lottie/second.json",
+                    //     height: 200, width: 200),
                     const Text(
                       "No Notes Found",
                       style: TextStyle(

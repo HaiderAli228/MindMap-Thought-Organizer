@@ -5,7 +5,8 @@ import 'package:sqflite/sqflite.dart';
 
 class DatabaseHelper {
   DatabaseHelper._();
-  static final DatabaseHelper getInstance = DatabaseHelper._(); // Singleton pattern
+  static final DatabaseHelper getInstance =
+      DatabaseHelper._(); // Singleton pattern
   Database? dbObject;
 
   final String tableName = "notes";
@@ -22,8 +23,10 @@ class DatabaseHelper {
     Directory appDirectory = await getApplicationDocumentsDirectory();
     String dbPath = join(appDirectory.path, "notesFolder.db");
     return await openDatabase(dbPath, onCreate: (db, version) {
-      db.execute(
-          "CREATE TABLE $tableName ($tableFirstColumnIsSeNum INTEGER PRIMARY KEY AUTOINCREMENT, $tableSecondColumnIsTitle TEXT, $tableThirdColumnIsDescription TEXT)");
+      db.execute("CREATE TABLE $tableName ("
+          "$tableFirstColumnIsSeNum INTEGER PRIMARY KEY AUTOINCREMENT, "
+          "$tableSecondColumnIsTitle TEXT,"
+          " $tableThirdColumnIsDescription TEXT)");
     }, version: 1);
   }
 
@@ -45,8 +48,8 @@ class DatabaseHelper {
 
   Future<bool> updateNotes(
       {required String titleIs,
-        required String descriptionIs,
-        required int indexIs}) async {
+      required String descriptionIs,
+      required int indexIs}) async {
     final databaseRef = await gettingDatabase();
     int rowEffectedIs = await databaseRef.update(
         tableName,
