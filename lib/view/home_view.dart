@@ -342,13 +342,13 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
                     );
                   },
                 ))
-                    : Column(
+                    : const Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     // Lottie.asset("assets/lottie/second.json",
                     //     height: 200, width: 200),
-                    const Text(
+                    Text(
                       "No Notes Found",
                       style: TextStyle(
                         fontFamily: "Poppins",
