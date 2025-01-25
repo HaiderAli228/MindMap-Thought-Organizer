@@ -30,6 +30,7 @@ class DatabaseHelper {
     }, version: 1);
   }
 
+  // add notes in database
   Future<bool> addNewNotes(
       {required String titleIs, required String descriptionIs}) async {
     final databaseRef = await gettingDatabase();
@@ -40,6 +41,7 @@ class DatabaseHelper {
     return rowEffectedIs > 0;
   }
 
+  // Fetch the data
   Future<List<Map<String, dynamic>>> fetchAllNotes() async {
     final databaseRef = await gettingDatabase();
     List<Map<String, dynamic>> fetchData = await databaseRef.query(tableName);
