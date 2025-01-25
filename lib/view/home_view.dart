@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:lottie/lottie.dart';
-
 import '../data/local/database.dart';
 import '../utils/app_colors.dart';
 import '../utils/toast_msg.dart';
